@@ -1,0 +1,29 @@
+
+
+
+ישלנו 10 קופסאות
+אני מסתכל על קופסא נוכחית - היא יכולה להתחבר רק עם הקופסאות ״מימין״ אליה.
+         __
+        | height                                                  numOfBoxes = 1;
+f(x)    |
+        | max(לקחתי את הקופסא הנוכחית, לא לקחתי את הקופסא)        numOfBoxes > 1;
+        |__
+
+public static int Highest(Box boxArray[],int numOfBoxes,int height){
+
+
+
+}
+
+[width,height] (SORTED)
+[13,5][16,15][8,6][15,3][15,17]
+[  a ][  b  ][ c ][  d ][  e  ]
+
+a -> Xb -> c -> Xd -> Xe => 11
+b -> c ->
+
+
+
+
+
+
