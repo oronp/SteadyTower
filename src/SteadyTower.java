@@ -1,5 +1,3 @@
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Vector;
 import java.util.Random;
 
@@ -11,14 +9,24 @@ public class SteadyTower {
         box = Sort(box);
     }
 
-    public static int ButtomUp(Vector<Box> boxes,int numOfBoxes){
-        int checker;
-
-        checker = boxes.get(0).height;
+    public static int BottomUp(Vector<Box> boxes,int numOfBoxes){
+        int max = 0;
+        Vector<Integer> totalHeight = new Vector<>();
+        totalHeight.add(boxes.get(0).height);
         for(int i = 1; i < numOfBoxes; i++){
-
+            totalHeight.add(boxes.get(i).height);
+            for(int j = 0; j < i; j++) {
+                if(boxes.get(j).width > boxes.get(i).width){
+                    if(totalHeight.get(j) > totalHeight.get(i)){
+                        totalHeight.set(i,boxes.get(j).height + boxes.get(i).height);
+                    }
+                }
+            }
         }
-        return 0;
+        for(int height:totalHeight){
+            Math.max(max,height);
+        }
+        return max;
     }
 
     public static Vector<Box> Builder(int numOfBoxes){
